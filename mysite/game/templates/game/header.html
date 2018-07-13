@@ -1,0 +1,195 @@
+<!-- GAME STATE TEMPLATE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Swampy Gooch</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'game/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="{% static 'game/js/script.js' %}"></script>
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row" id="banner">
+			  <div class="col-sm-2">
+				  
+			  </div>
+			  <div class="col-sm-10">
+				  <br>
+				  <center>
+				  <h3>Tracht Basketball Sim</h3>
+				  </center>
+			  </div>
+		</div><hr>
+
+		<div class="row">
+		  <div class="col-sm-2" id="User Player List">
+				<div class="row" id="Point Guard Row">
+					<div class="col-sm-12">
+						{% block UserPointGuard %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Shooting Guard Row">
+					<div class="col-sm-12">
+						{% block UserShootingGuard %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Small Forward Row">
+					<div class="col-sm-12">
+						{% block UserSmallForward %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Power Forward Row">
+					<div class="col-sm-12">
+						{% block UserPowerForward %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Center Position Row">
+					<div class="col-sm-12">
+						{% block UserCenterPosition %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="User Team Stats">
+					<div class="col-sm-12">
+						{% block UserTeamStats %}
+						{% endblock %}
+					</div>
+				</div>
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-8" id="Game Screen">
+			<div class="row" id="Scoreboard">
+				<div class="col-sm-6">
+					{% block UserTeamScore %}
+					{% endblock %}
+				</div>
+				<div class="col-sm-6">
+					{% block OpposingTeamScore %}
+					{% endblock %}
+				</div>
+			</div>
+			<div class="row" id="Matchup Screen">
+				<div class="row">
+					<div class="col-sm-6">
+					{% block DefenseMatchup %}
+					{% endblock %}
+					</div>
+					<div class="col-sm-6">
+					{% block DefenseRating %}
+					{% endblock %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+					{% block DefenseTraits %}
+					{% endblock %}
+					</div>
+					<div class="col-sm-6">
+					{% block DefensePortrait %}
+					{% endblock %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+					{% block OffenseScoringRating %}
+					{% endblock %}
+					</div>
+					<div class="col-sm-6">
+					{% block OffensePassingRating %}
+					{% endblock %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+					{% block OffenseTraits %}
+					{% endblock %}
+					</div>
+					<div class="col-sm-6">
+					{% block OffensePortrait %}
+					{% endblock %}
+					</div>
+				</div>
+			</div>
+			<div class="row" id="Start Simulation" style="display: inline">
+				<button type="button" id="Start Sim Button">Start Simulation</button>
+			</div>
+			<div class="row" id="Last Play Screen" style="display: none">
+				<div class="row">
+					<div class="col-sm-12">
+					{% block LastPlayResult %}
+					{% endblock %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+					{% block LastPlayOffensePlayer %}
+					{% endblock %}
+					</div>
+					<div class="col-sm-6">
+					{% block LastPlayDefensePlayer %}
+					{% endblock %}
+					</div>
+				</div>
+			</div>
+		  </div> <!-- sm-8 -->
+		  <div class="col-sm-2" id="Opposing Player List">
+			<div class="row" id="Point Guard Row">
+					<div class="col-sm-12">
+						{% block OpposingPointGuard %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Shooting Guard Row">
+					<div class="col-sm-12">
+						{% block OpposingShootingGuard %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Small Forward Row">
+					<div class="col-sm-12">
+						{% block OpposingSmallForward %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Power Forward Row">
+					<div class="col-sm-12">
+						{% block OpposingPowerForward %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Center Position Row">
+					<div class="col-sm-12">
+						{% block OpposingCenterPosition %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="row" id="Opposing Team Stats">
+					<div class="col-sm-12">
+						{% block OpposingTeamStats %}
+						{% endblock %}
+					</div>
+				</div>
+		  </div> <!--col-sm-2-->
+		</div> 
+	</div>
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	
+</body>
+
+</html>

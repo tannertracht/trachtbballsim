@@ -1,0 +1,81 @@
+{% extends "game/header.html" %}
+
+{% block UserPointGuard %}
+	<p> 
+	{{PointGuard.0}} {{PointGuard.1}}
+	<br>
+	{{PointGuard.4}} {{PointGuard.5}} {{PointGuard.6}} 
+	</p>
+{% endblock %}
+
+{% block UserShootingGuard %}
+	<p> 
+	{{ShootingGuard.0}} {{ShootingGuard.1}}
+	<br>
+	{{ShootingGuard.4}} {{ShootingGuard.5}} {{ShootingGuard.6}} 
+	</p>
+{% endblock %}
+
+{% block UserSmallForward %}
+	<p> 
+	{{SmallForward.0}} {{SmallForward.1}}
+	<br>
+	{{SmallForward.4}} {{SmallForward.5}} {{SmallForward.6}} 
+	</p>
+{% endblock %}
+						
+{% block UserPowerForward %}
+	<p> 
+	{{PowerForward.0}} {{PowerForward.1}}
+	<br>
+	{{PowerForward.4}} {{PowerForward.5}} {{PowerForward.6}} 
+	</p>
+{% endblock %}
+						
+{% block UserCenterPosition %}
+	<p> 
+	{{Center.0}} {{Center.1}}
+	<br>
+	{{Center.4}} {{Center.5}} {{Center.6}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingPointGuard %}
+	<p> 
+	{{OpposingPointGuard.firstName}} {{OpposingPointGuard.lastName}} 
+	<br>
+	{{OpposingPointGuard.scoring}} {{OpposingPointGuard.passing}} {{OpposingPointGuard.defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingShootingGuard %}
+	<p> 
+	{{OpposingShootingGuard.firstName}} {{OpposingShootingGuard.lastName}} 
+	<br>
+	{{OpposingShootingGuard.scoring}} {{OpposingShootingGuard.passing}} {{OpposingShootingGuard.defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingSmallForward %}
+	<p> 
+	{{OpposingSmallForward.firstName}} {{OpposingSmallForward.lastName}} 
+	<br>
+	{{OpposingSmallForward.scoring}} {{OpposingSmallForward.passing}} {{OpposingSmallForward.defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingPowerForward %}
+	<p> 
+	{{OpposingPowerForward.firstName}} {{OpposingPowerForward.lastName}} 
+	<br>
+	{{OpposingPowerForward.scoring}} {{OpposingPowerForward.passing}} {{OpposingPowerForward.defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingCenterPosition %}
+	<p> 
+	{{OpposingCenter.firstName}} {{OpposingCenter.lastName}} 
+	<br>
+	{{OpposingCenter.scoring}} {{OpposingCenter.passing}} {{OpposingCenter.defense}} 
+	</p>
+{% endblock %}
