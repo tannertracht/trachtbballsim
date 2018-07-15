@@ -2,6 +2,7 @@ from django.db import models
 
 class Team(models.Model):
 	ip = models.GenericIPAddressField()
+	OpposingTeam = models.IntegerField()
 	PointGuardFirstName = models.CharField(max_length = 30)
 	PointGuardLastName = models.CharField(max_length = 30)
 	PointGuardHeight = models.CharField(max_length = 5)
