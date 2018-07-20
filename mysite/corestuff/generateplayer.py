@@ -1,7 +1,7 @@
 import random
 import names
 
-class Player():
+class player():
 
 	def __init__(self, pos):
 		# Pos Guide: 1 = PG, 2 = SG, 3 = SF, 4 = PF, 5 = C
@@ -85,6 +85,20 @@ class Player():
 			return "7'3"
 		elif inches == 88:
 			return "7'4"
+			
+class BlankPlayer():
+
+	def __init__(self, pos):
+		# Pos Guide: 1 = PG, 2 = SG, 3 = SF, 4 = PF, 5 = C
+		self.firstName = ''
+		self.lastName = ''
+		self.height = 0
+		self.weight = 0
+		self.position = pos
+		self.scoring = 0
+		self.passing = 0
+		self.defense = 0
+
 	
 
 		
