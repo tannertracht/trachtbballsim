@@ -1,0 +1,332 @@
+{% extends "game/base.html" %}
+
+{% block stylefill %}
+
+.selected-player {background-color: blue}
+.player-box {border-style: solid; border-width: 1px; margin: 2px; text-align: center;}
+.coaching-adjustments {text-align: center; padding: 15px; border-width: 1px; border-style: solid;}
+.coaching-table-visible {display: inline}
+.coaching-table-hidden {display: none}
+
+{% endblock %}
+
+{% block fill %}
+
+<div class="row">
+	<div class="col player-box" id="Point Guard"> 
+		{{PointGuard.FirstName}} {{PointGuard.LastName}} <br>
+		{{PointGuard.Weight}} {{PointGuard.Height}} <br>
+		{{PointGuard.Scoring}} {{PointGuard.Passing}} {{PointGuard.Defense}}
+	</div>
+	<div class="col player-box" id="Shooting Guard">
+		{{ShootingGuard.FirstName}} {{ShootingGuard.LastName}} <br>
+		{{ShootingGuard.Weight}} {{ShootingGuard.Height}} <br>
+		{{ShootingGuard.Scoring}} {{ShootingGuard.Passing}} {{ShootingGuard.Defense}}
+	</div>
+</div>
+<div class="row">
+	<div class="col player-box" id="Small Forward">
+		{{SmallForward.FirstName}} {{SmallForward.LastName}} <br>
+		{{SmallForward.Weight}} {{SmallForward.Height}} <br>
+		{{SmallForward.Scoring}} {{SmallForward.Passing}} {{SmallForward.Defense}}
+	</div>
+	<div class="col player-box" id="Power Forward">
+		{{PowerForward.FirstName}} {{PowerForward.LastName}} <br>
+		{{PowerForward.Weight}} {{PowerForward.Height}} <br>
+		{{PowerForward.Scoring}} {{PowerForward.Passing}} {{PowerForward.Defense}}
+	</div>
+	<div class="col player-box" id="Center">
+		{{Center.FirstName}} {{Center.LastName}} <br>
+		{{Center.Weight}} {{Center.Height}} <br>
+		{{Center.Scoring}} {{Center.Passing}} {{Center.Defense}}
+	</div>
+</div>
+<div id="Point Guard Coaching Table" class="coaching-table-hidden">
+	<div class="row">
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Shoot First">
+			Shoot First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Pass First">
+			Pass First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Catch and Shoot">
+			Catch and Shoot
+		</div>
+	</div>
+	<div class ="row">
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Help Defender">
+			Help Defender
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Shot">
+			Deny Shot
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Pass">
+			Deny Pass
+		</div>
+	</div>
+</div>
+<div id="Shooting Guard Coaching Table" class="coaching-table-hidden">
+	<div class="row">
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Shoot First">
+			Shoot First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Pass First">
+			Pass First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Catch and Shoot">
+			Catch and Shoot
+		</div>
+	</div>
+	<div class ="row">
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Help Defender">
+			Help Defender
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Shot">
+			Deny Shot
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Pass">
+			Deny Pass
+		</div>
+	</div>
+</div>
+<div id="Small Forward Coaching Table" class="coaching-table-hidden">
+	<div class="row">
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Shoot First">
+			Shoot First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Pass First">
+			Pass First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Catch and Shoot">
+			Catch and Shoot
+		</div>
+	</div>
+	<div class ="row">
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Help Defender">
+			Help Defender
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Shot">
+			Deny Shot
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Pass">
+			Deny Pass
+		</div>
+	</div>
+</div>
+<div id="Power Forward Coaching Table" class="coaching-table-hidden">
+	<div class="row">
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Shoot First">
+			Shoot First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Pass First">
+			Pass First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Catch and Shoot">
+			Catch and Shoot
+		</div>
+	</div>
+	<div class ="row">
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Help Defender">
+			Help Defender
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Shot">
+			Deny Shot
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Pass">
+			Deny Pass
+		</div>
+	</div>
+</div>
+<div id="Center Coaching Table" class="coaching-table-hidden">
+	<div class="row">
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Shoot First">
+			Shoot First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Pass First">
+			Pass First
+		</div>
+		<div class="col coaching-adjustments offense-coaching-adjustments" id="Catch and Shoot">
+			Catch and Shoot
+		</div>
+	</div>
+	<div class ="row">
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Help Defender">
+			Help Defender
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Shot">
+			Deny Shot
+		</div>
+		<div class="col coaching-adjustments defense-coaching-adjustments" id="Deny Pass">
+			Deny Pass
+		</div>
+	</div>
+</div>
+<div class="row" id="Save Adjustments" style="display: none; text-align: center;">
+	<button type="button" id="Save Adjustments Button">{% csrf_token %}Save </button>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+	<script>
+	var pointGuardInfo = ['{{PointGuard.ShootFirst}}', '{{PointGuard.PassFirst}}', '{{PointGuard.CatchAndShoot}}', '{{PointGuard.HelpDefender}}', '{{PointGuard.DenyShot}}', '{{PointGuard.DenyPass}}'];
+	var shootingGuardInfo = ['{{ShootingGuard.ShootFirst}}', '{{ShootingGuard.PassFirst}}', '{{ShootingGuard.CatchAndShoot}}', '{{ShootingGuard.HelpDefender}}', '{{ShootingGuard.DenyShot}}', '{{ShootingGuard.DenyPass}}'];
+	var smallForwardInfo = ['{{SmallForward.ShootFirst}}', '{{SmallForward.PassFirst}}', '{{SmallForward.CatchAndShoot}}', '{{SmallForward.HelpDefender}}', '{{SmallForward.DenyShot}}', '{{SmallForward.DenyPass}}'];
+	var powerForwardInfo = ['{{PowerForward.ShootFirst}}', '{{PowerForward.PassFirst}}', '{{PowerForward.CatchAndShoot}}', '{{PowerForward.HelpDefender}}', '{{PowerForward.DenyShot}}', '{{PowerForward.DenyPass}}'];
+	var centerInfo = ['{{Center.ShootFirst}}', '{{Center.PassFirst}}', '{{Center.CatchAndShoot}}', '{{Center.HelpDefender}}', '{{Center.DenyShot}}', '{{Center.DenyPass}}'];
+	if ('{{PointGuard.ShootFirst}}' == 'True') {
+		$("[id='Point Guard Coaching Table']").find("[id='Shoot First']").css('background-color', "green");
+	} else {
+		$("[id='Point Guard Coaching Table']").find("[id='Shoot First']").css('background-color', "red");
+	}
+	if ('{{PointGuard.PassFirst}}' == 'True') {
+		$("[id='Point Guard Coaching Table']").find("[id='Pass First']").css('background-color', "green");
+	} else {
+		$("[id='Point Guard Coaching Table']").find("[id='Pass First']").css('background-color', "red");
+	}
+	if ('{{PointGuard.CatchAndShoot}}' == 'True') {
+		$("[id='Point Guard Coaching Table']").find("[id='Catch and Shoot']").css('background-color', "green");
+	} else {
+		$("[id='Point Guard Coaching Table']").find("[id='Catch and Shoot']").css('background-color', "red");
+	}
+	if ('{{PointGuard.HelpDefender}}' == 'True') {
+		null;
+	} else {
+		$("[id='Point Guard Coaching Table']").find("[id='Help Defender']").css('background-color', "red");
+	}
+	if ('{{PointGuard.DenyShot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Point Guard Coaching Table']").find("[id='Deny Shot']").css('background-color', "red");
+	}
+	if ('{{PointGuard.DenyPass}}' == 'True') {
+		null;
+	} else {
+		$("[id='Point Guard Coaching Table']").find("[id='Deny Pass']").css('background-color', "red");
+	}
+	if ('{{ShootingGuard.ShootFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Shooting Guard Coaching Table']").find("[id='Shoot First']").css('background-color', "red");
+	}
+	if ('{{ShootingGuard.PassFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Shooting Guard Coaching Table']").find("[id='Pass First']").css('background-color', "red");
+	}
+	if ('{{ShootingGuard.CatchAndShoot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Shooting Guard Coaching Table']").find("[id='Catch and Shoot']").css('background-color', "red");
+	}
+	if ('{{ShootingGuard.HelpDefender}}' == 'True') {
+		null;
+	} else {
+		$("[id='Shooting Guard Coaching Table']").find("[id='Help Defender']").css('background-color', "red");
+	}
+	if ('{{ShootingGuard.DenyShot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Shooting Guard Coaching Table']").find("[id='Deny Shot']").css('background-color', "red");
+	}
+	if ('{{ShootingGuard.DenyPass}}' == 'True') {
+		null;
+	} else {
+		$("[id='Shooting Guard Coaching Table']").find("[id='Deny Pass']").css('background-color', "red");
+	}
+	if ('{{SmallForward.ShootFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Small Forward Coaching Table']").find("[id='Shoot First']").css('background-color', "red");
+	}
+	if ('{{SmallForward.PassFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Small Forward Coaching Table']").find("[id='Pass First']").css('background-color', "red");
+	}
+	if ('{{SmallForward.CatchAndShoot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Small Forward Coaching Table']").find("[id='Catch and Shoot']").css('background-color', "red");
+	}
+	if ('{{SmallForward.HelpDefender}}' == 'True') {
+		null;
+	} else {
+		$("[id='Small Forward Coaching Table']").find("[id='Help Defender']").css('background-color', "red");
+	}
+	if ('{{SmallForward.DenyShot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Small Forward Coaching Table']").find("[id='Deny Shot']").css('background-color', "red");
+	}
+	if ('{{SmallForward.DenyPass}}' == 'True') {
+		null;
+	} else {
+		$("[id='Small Forward Coaching Table']").find("[id='Deny Pass']").css('background-color', "red");
+	}
+	if ('{{PowerForward.ShootFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Power Forward Coaching Table']").find("[id='Shoot First']").css('background-color', "red");
+	}
+	if ('{{PowerForward.PassFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Power Forward Coaching Table']").find("[id='Pass First']").css('background-color', "red");
+	}
+	if ('{{PowerForward.CatchAndShoot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Power Forward Coaching Table']").find("[id='Catch and Shoot']").css('background-color', "red");
+	}
+	if ('{{PowerForward.HelpDefender}}' == 'True') {
+		null;
+	} else {
+		$("[id='Power Forward Coaching Table']").find("[id='Help Defender']").css('background-color', "red");
+	}
+	if ('{{PowerForward.DenyShot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Power Forward Coaching Table']").find("[id='Deny Shot']").css('background-color', "red");
+	}
+	if ('{{PowerForward.DenyPass}}' == 'True') {
+		null;
+	} else {
+		$("[id='Power Forward Coaching Table']").find("[id='Deny Pass']").css('background-color', "red");
+	}
+	if ('{{Center.ShootFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Center Coaching Table']").find("[id='Shoot First']").css('background-color', "red");
+	}
+	if ('{{Center.PassFirst}}' == 'True') {
+		null;
+	} else {
+		$("[id='Center Coaching Table']").find("[id='Pass First']").css('background-color', "red");
+	}
+	if ('{{Center.CatchAndShoot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Center Coaching Table']").find("[id='Catch and Shoot']").css('background-color', "red");
+	}
+	if ('{{Center.HelpDefender}}' == 'True') {
+		null;
+	} else {
+		$("[id='Center Coaching Table']").find("[id='Help Defender']").css('background-color', "red");
+	}
+	if ('{{Center.DenyShot}}' == 'True') {
+		null;
+	} else {
+		$("[id='Center Coaching Table']").find("[id='Deny Shot']").css('background-color', "red");
+	}
+	if ('{{Center.DenyPass}}' == 'True') {
+		null;
+	} else {
+		$("[id='Center Coaching Table']").find("[id='Deny Pass']").css('background-color', "red");
+	}
+	</script>
+
+
+{% endblock %}

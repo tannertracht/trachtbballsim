@@ -1,0 +1,51 @@
+<!-- GAME STATE TEMPLATE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Swampy Gooch</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+		{% block stylefill %}
+		
+		{% endblock %}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row" id="banner">
+			 <div class="col-sm-2">
+				  
+			 </div>
+			 <div class="col-sm-8">
+				 <br>
+				 <center>
+				 <h3>Tracht Basketball Sim</h3>
+				 </center>
+			 </div>
+			 <div class="col-sm-2" style="text-align: right">
+				  <a href="{% url 'index' %}">Simulation Screen</a>
+			 </div>
+		</div>
+		{% block fill %}
+		{% endblock %}
+	</div>
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'game/css/bootstrap.min.css' %}" type = "text/css"/>
+	<script type="text/javascript" src="{% static 'game/js/coachingscript.js' %}"></script>
+	{% block scripts %}
+	{% endblock %}
+</body>
+
+</html>

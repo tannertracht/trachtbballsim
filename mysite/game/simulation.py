@@ -51,7 +51,7 @@ def matchup(offensePlayer, defensePlayer, userOffense, offenseTeam = None, defen
 	newOffenseTeam = offenseTeam[:]
 	newDefenseTeam = defenseTeam[:]
 	if recievedPass == True:
-		passer = passer.firstName
+		passer = passer.firstName + " " + passer.lastName
 	if chance <= 50 or recievedPass == True:
 		# player shoots
 		shotMadeChance = 1 if offensePlayer.scoring <= defensePlayer.defense else offensePlayer.scoring - defensePlayer.defense
