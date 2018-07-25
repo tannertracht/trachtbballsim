@@ -98,6 +98,12 @@ class BlankPlayer():
 		self.scoring = 0
 		self.passing = 0
 		self.defense = 0
+		ShootFirst = False
+		PassFirst = False
+		CatchAndShoot = False
+		HelpDefender = False
+		DenyShot = False
+		DenyPass =  False
 
 	
 
