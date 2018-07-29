@@ -72,8 +72,10 @@ def matchup(offensePlayer, defensePlayer, userOffense, offenseTeam = None, defen
 	newDefenseTeam = defenseTeam[:]
 	if recievedPass == True:
 		passer = passer.firstName + " " + passer.lastName
+		if defensePlayer.helpdefender == True:
+			shotMakeBarrier -= 2
 		if offensePlayer.catchandshoot == True:
-			shotMakeBarrier = 4
+			shotMakeBarrier -= 2
 	if chance <= passChance or recievedPass == True:
 		# player shoots
 		# Could increase effeciency by making a 'HasHelp' column in player table connected to player
