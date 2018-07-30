@@ -30,7 +30,7 @@
 				 </center>
 			 </div>
 			 <div class="col-sm-2" style="text-align: right">
-				  <a href="{% url 'index' %}">Simulation Screen</a>
+				  <a href="{% url 'simulationscreen' %}">Simulation Screen</a>
 			 </div>
 		</div>
 		{% block fill %}
@@ -41,9 +41,8 @@
 			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
 		</div>
 	</footer>	
-	{% load static %}
-	<link rel="stylesheet" href="{% static 'game/css/bootstrap.min.css' %}" type = "text/css"/>
-	<script type="text/javascript" src="{% static 'game/js/coachingscript.js' %}"></script>
+	
+	
 	{% block scripts %}
 	{% endblock %}
 </body>

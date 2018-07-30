@@ -168,8 +168,11 @@
 
 {% endblock %}
 
-{% block scripts %}
 
+{% block scripts %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'game/css/bootstrap.min.css' %}" type = "text/css"/>
+	<script type="text/javascript" src="{% static 'game/js/coachingscript.js' %}"></script>
 	<script>
 	var pointGuardInfo = ['{{PointGuard.ShootFirst}}', '{{PointGuard.PassFirst}}', '{{PointGuard.CatchAndShoot}}', '{{PointGuard.HelpDefender}}', '{{PointGuard.DenyShot}}', '{{PointGuard.DenyPass}}'];
 	var shootingGuardInfo = ['{{ShootingGuard.ShootFirst}}', '{{ShootingGuard.PassFirst}}', '{{ShootingGuard.CatchAndShoot}}', '{{ShootingGuard.HelpDefender}}', '{{ShootingGuard.DenyShot}}', '{{ShootingGuard.DenyPass}}'];
