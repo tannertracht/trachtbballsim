@@ -17,9 +17,9 @@ posessionCount = 1
 userTeamScore = 0
 opposingTeamScore = 0
 
-def RunSim(userIp):
+def RunSim(user):
 	global gameResults
-	userTeam, opposingTeam = importTeams(userIp)
+	userTeam, opposingTeam = importTeams(user)
 	mergedTeams = userTeam
 	for i in range(0, 5):
 		# Matchup Function
@@ -138,8 +138,8 @@ def bubbleSort(alist, matchedList):
 	return alist, matchedList
 		
 				
-def importTeams(userIp):
-	team = Team.objects.get(ip=userIp)
+def importTeams(user):
+	team = Team.objects.get(User=user)
 	opposingTeam = Team.objects.get(OpposingTeam = team.pk)
 	UserTeam = [BlankPlayer(1), BlankPlayer(2), BlankPlayer(3), BlankPlayer(4), BlankPlayer(5)]
 	OpposingTeam = [BlankPlayer(1), BlankPlayer(2), BlankPlayer(3), BlankPlayer(4), BlankPlayer(5)]

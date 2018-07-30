@@ -22,6 +22,6 @@ class Team(models.Model):
 	SmallForward = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='smallforward')
 	PowerForward = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='powerforward')
 	Center = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='center')
-	ip = models.GenericIPAddressField()
+	User = models.IntegerField()
 	OpposingTeam = models.IntegerField()
 	

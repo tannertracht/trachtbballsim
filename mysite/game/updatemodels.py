@@ -1,7 +1,7 @@
 from .models import Team
 
-def updatePlayer(teamip, changedict):
-	team = Team.objects.get(ip=teamip)
+def updatePlayer(user, changedict):
+	team = Team.objects.get(User=user)
 	Oadjustment = changedict["offenseadjustment"]
 	Dadjustment = changedict["defenseadjustment"]
 	position = changedict["position"]

@@ -1,7 +1,7 @@
 from corestuff.generateplayer import player
 from .models import Team, Player
 
-def createteam(newip = 0):
+def createteam(user):
 	pointguard = player(1)
 	shootingguard = player(2)
 	smallforward = player(3)
@@ -62,7 +62,7 @@ def createteam(newip = 0):
 	newTeam.SmallForward = modelSF
 	newTeam.PowerForward = modelPF
 	newTeam.Center = modelC
-	newTeam.ip = newip
+	newTeam.User = user
 	
 	
 	
@@ -129,7 +129,7 @@ def createteam(newip = 0):
 	newOpposingTeam.SmallForward = CPUmodelSF
 	newOpposingTeam.PowerForward = CPUmodelPF
 	newOpposingTeam.Center = CPUmodelC
-	newOpposingTeam.ip = 0
+	newOpposingTeam.User = -1
 	
 	# Set new user teams opposing team to new opposing teams primary keys
 	newTeam.OpposingTeam = 0

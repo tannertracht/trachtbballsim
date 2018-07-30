@@ -1,0 +1,97 @@
+{% extends "game/header.html" %}
+
+{% block UserPointGuard %}
+	<p> 
+	{{PointGuard.FirstName}} {{PointGuard.LastName}}
+	<br>
+	{{PointGuard.Scoring}} {{PointGuard.Passing}} {{PointGuard.Defense}} 
+	</p>
+{% endblock %}
+
+{% block UserShootingGuard %}
+	<p> 
+	{{ShootingGuard.FirstName}} {{ShootingGuard.LastName}}
+	<br>
+	{{ShootingGuard.Scoring}} {{ShootingGuard.Passing}} {{ShootingGuard.Defense}} 
+	</p>
+{% endblock %}
+
+{% block UserSmallForward %}
+	<p> 
+	{{SmallForward.FirstName}} {{SmallForward.LastName}}
+	<br>
+	{{SmallForward.Scoring}} {{SmallForward.Passing}} {{SmallForward.Defense}} 
+	</p>
+{% endblock %}
+						
+{% block UserPowerForward %}
+	<p> 
+	{{PowerForward.FirstName}} {{PowerForward.LastName}}
+	<br>
+	{{PowerForward.Scoring}} {{PowerForward.Passing}} {{PowerForward.Defense}} 
+	</p>
+{% endblock %}
+						
+{% block UserCenterPosition %}
+	<p> 
+	{{Center.FirstName}} {{Center.LastName}}
+	<br>
+	{{Center.Scoring}} {{Center.Passing}} {{Center.Defense}} 
+	</p>
+{% endblock %}
+
+{% block UserTeamStats %}
+
+{% endblock %}
+						
+{% block OpposingPointGuard %}
+	<p> 
+	{{OpposingPointGuard.FirstName}} {{OpposingPointGuard.LastName}}
+	<br>
+	{{OpposingPointGuard.Scoring}} {{OpposingPointGuard.Passing}} {{OpposingPointGuard.Defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingShootingGuard %}
+	<p> 
+	{{OpposingShootingGuard.FirstName}} {{OpposingShootingGuard.LastName}}
+	<br>
+	{{OpposingShootingGuard.Scoring}} {{OpposingShootingGuard.Passing}} {{OpposingShootingGuard.Defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingSmallForward %}
+	<p> 
+	{{OpposingSmallForward.FirstName}} {{OpposingSmallForward.LastName}}
+	<br>
+	{{OpposingSmallForward.Scoring}} {{OpposingSmallForward.Passing}} {{OpposingSmallForward.Defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingPowerForward %}
+	<p> 
+	{{OpposingPowerForward.FirstName}} {{OpposingPowerForward.LastName}}
+	<br>
+	{{OpposingPowerForward.Scoring}} {{OpposingPowerForward.Passing}} {{OpposingPowerForward.Defense}} 
+	</p>
+{% endblock %}
+						
+{% block OpposingCenterPosition %}
+	<p> 
+	{{OpposingCenter.FirstName}} {{OpposingCenter.LastName}}
+	<br>
+	{{OpposingCenter.Scoring}} {{OpposingCenter.Passing}} {{OpposingCenter.Defense}} 
+	</p>
+{% endblock %}
+
+{% block OpposingTeamStats %}
+
+{% endblock %}
+
+{% block UserTeamScore %}
+
+{% endblock %}
+
+{% block OpposingTeamScore %}
+
+{% endblock %}
