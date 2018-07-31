@@ -14,7 +14,7 @@ document.getElementById("Start Sim Button").onclick = function(){
 	document.getElementById("Last Play Screen").style.display = "flex";
 	// Initiate Simulation
 	// Must change IP below when hosting differently
-	$.get("http://127.0.0.1:8000/simulation", function(data, status){
+	$.get("/simulation", function(data, status){
         // data is a javascript object. All keys in original dict are referencable by data[key] 
 		i = 1;
 		function revealSimulation() {

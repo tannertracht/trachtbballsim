@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Team
 from .forms import LoginForm
@@ -23,11 +23,15 @@ def index(request):
 					return render(request, 'game/home.html', {'form': form, 'exists': 'Team name is already taken'})
 				user = User.objects.create_user(username = form.cleaned_data["team_name"], password = form.cleaned_data["team_password"])
 			request.session['user'] = user.pk
+			login(request, user)
 			return HttpResponseRedirect('sim')
 			
 	else:
-		form = LoginForm()
-		return render(request, 'game/home.html', {'form': form})
+		if request.user.is_authenticated:
+			return HttpResponseRedirect('sim')
+		else:
+			form = LoginForm()
+			return render(request, 'game/home.html', {'form': form})
 
 
 
@@ -35,6 +39,8 @@ def simulationscreen(request):
 	#Team.objects.all().delete()
 	# If user went directly to /sim/ and bypassed logging in error will occur. Need to check if user is logged in before 
 	# Returning a view
+	if request.user.is_authenticated == False:
+		return HttpResponseRedirect('/')
 	user = request.session['user']
 	teams = Team.objects.filter(User=user).count()
 	if teams >= 1:
@@ -56,6 +62,8 @@ def simulation(request):
 	return JsonResponse(gameResults)
 	
 def coaching(request):
+	if request.user.is_authenticated == False:
+		return HttpResponseRedirect('/')
 	user = request.session['user']
 	team = Team.objects.get(User=user)
 	player_dict = {'PointGuard': team.PointGuard, 'ShootingGuard': team.ShootingGuard, 'SmallForward': team.SmallForward, 'PowerForward': team.PowerForward, 'Center': team.Center}
@@ -66,10 +74,15 @@ def coachingupdate(request):
 	updatePlayer(user, request.POST)
 	return HttpResponse('saved')
 			
-def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-    return ip			
+def logout_view(request):
+	logout(request)
+	return HttpResponseRedirect('/')
+	
+	
+	
+	
+	
+	
+	
+	
+	
