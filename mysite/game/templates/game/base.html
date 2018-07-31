@@ -17,32 +17,33 @@
 	</style>
 </head>
 
-<body class="body" style="background-color:#f6f6f6">
-	<div class="container-fluid" style="min-height:95%; ">
-		<div class="row" id="banner">
-			 <div class="col-sm-2">
+<body class="body" style="background-color:#f6f6f6; min-height:100%">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				{% block bannerleft %}
+				
+				{% endblock %}
+			</div>
+			<div class="col" style="text-align: right">
+				{% block bannerright %}
 				  
+				{% endblock %}
 			 </div>
-			 <div class="col-sm-8">
+		</div>
+		<div class="row" id="banner">
+			
+			 <div class="col">
 				 <br>
 				 <center>
 				 <h3>Tracht Basketball Sim</h3>
 				 </center>
 			 </div>
-			 <div class="col-sm-2" style="text-align: right">
-				  <a href="{% url 'simulationscreen' %}">Simulation Screen</a>
-			 </div>
+			 
 		</div>
 		{% block fill %}
 		{% endblock %}
-	</div>
-	<footer>
-		<div class="container-fluid" style='margin-left:15px'>
-			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
-		</div>
-	</footer>	
-	
-	
+	</div>	
 	{% block scripts %}
 	{% endblock %}
 </body>
