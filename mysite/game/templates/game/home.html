@@ -1,18 +1,22 @@
 {% extends "game/base.html" %}
 
 {% block stylefill %}
-		
+	.vertical-center {min-height: 100vh; display: flex; align-items: center}
 {% endblock %}
 
 
 {% block fill %}
-	{{exists}}
-	<form action="" method="post">
-    {% csrf_token %}
-    {{ form.team_name.label }} {{ form.team_name }} <br>
-	{{ form.team_password.label }} {{ form.team_password }}
-    <input type="submit" value="Submit" />
-	</form>
+	<div class="vertical-center" style="text-align:right;">
+		<div style="margin-left: auto; margin-right: auto; width: 50"%>
+		{{exists}}
+		<form action="" method="post">
+		{% csrf_token %}
+		{{ form.team_name.label }} {{ form.team_name }} <br>
+		{{ form.team_password.label }} {{ form.team_password }} <br>
+		<input type="submit" value="Submit" />
+		</form>
+		</div>
+	</div>
 {% endblock %}
 
 

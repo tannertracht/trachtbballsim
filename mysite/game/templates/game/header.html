@@ -6,8 +6,7 @@
 	<meta charset="utf-8" />
 	
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
 	
 	<style type="text/css">
 		html,
@@ -23,11 +22,18 @@
 
 <body class="body" style="background-color:#f6f6f6">
 	<div class="container-fluid" style="min-height:95%; ">
-		<div class="row" id="banner">
-			  <div class="col-sm-2">
+		<div class="row">
+			<div class="col">
 				  <a href="{% url 'coaching' %}">Coaches Room</a>
 			  </div>
-			  <div class="col-sm-8">
+			  <div class="col" style="text-align: right">
+				{% block bannerright %}
+				  
+				{% endblock %}
+			 </div>
+		</div>
+		<div class="row" id="banner">
+			  <div class="col">
 				  <br>
 				  <center>
 				  <h3>Tracht Basketball Sim</h3>
@@ -143,7 +149,7 @@
 	</div>
 	<footer>
 		<div class="container-fluid" style='margin-left:15px'>
-			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+			<p><a href="https://github.com/tannertracht" target="blank">Github</a> | <a href="https://www.linkedin.com/in/tanner-tracht-aa0a04133/" target="blank">LinkedIn</a> | <a href="https://twitter.com/SmooothT" target="blank">Twitter</a></p>
 		</div>
 	</footer>	
 	{% load static %}
