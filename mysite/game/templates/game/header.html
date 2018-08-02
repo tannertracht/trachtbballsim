@@ -24,13 +24,15 @@
 	<div class="container-fluid" style="min-height:95%; ">
 		<div class="row">
 			<div class="col">
-				  <a href="{% url 'coaching' %}">Coaches Room</a>
-			  </div>
-			  <div class="col" style="text-align: right">
+				{% block bannerleft %}
+				
+				{% endblock %}
+			</div>
+			<div class="col" style="text-align: right">
 				{% block bannerright %}
 				  
 				{% endblock %}
-			 </div>
+			</div>
 		</div>
 		<div class="row" id="banner">
 			  <div class="col">
@@ -136,7 +138,7 @@
 			</div>
 		</div>
 		<div class="row" id="Start Simulation" style="display: inline, text-align: center;">
-			<button type="button" id="Start Sim Button" action="127.0.0.1:8000/simulation" method="get">Start Simulation</button>
+			<button type="button" id="Start Sim Button">Start Simulation</button>
 		</div>
 		<div class="row" id="Last Play Screen" style="display: none; margin-top: 5%">
 			<div class="col" id="Result" style="text-align: center;">

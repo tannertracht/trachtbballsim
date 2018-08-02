@@ -1,10 +1,18 @@
 {% extends "game/header.html" %}
 
 
+{% block bannerleft %}
+
+	<a href="{% url 'coaching' %}">Coaches Room</a>
+
+{% endblock %}
+
+
 {% block bannerright %}
-
-	<a href="{% url 'logout' %}">Logout</a>
-
+	
+	<a href="{% url 'seasonscreen' %}">Dashboard</a> |
+	<a href="{% url 'logout' %}">Logout</a> 
+	
 {% endblock %}
 
 {% block UserPointGuard %}

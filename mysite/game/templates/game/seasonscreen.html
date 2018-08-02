@@ -1,0 +1,124 @@
+{% extends "game/base.html" %}
+
+{% block stylefill %}
+
+.player-box {border-style: solid; border-width: 1px; margin: 2px; text-align: center;}
+
+{% endblock %}
+
+{% block bannerleft %}
+	<a href="{% url 'simulationscreen' %}">Simulation Screen</a>
+{% endblock %}
+
+
+{% block fill %}
+	<div class="row" style="text-align: center; ">
+		 <div class="col"> Current Players </div>
+	</div>
+	<div class="row">
+		<div class="col player-box" id="Point Guard"> 
+			{{PointGuard.FirstName}} {{PointGuard.LastName}} <br>
+			{{PointGuard.Weight}} {{PointGuard.Height}} <br>
+			{{PointGuard.Scoring}} {{PointGuard.Passing}} {{PointGuard.Defense}}
+		</div>
+		<div class="col player-box" id="Shooting Guard">
+			{{ShootingGuard.FirstName}} {{ShootingGuard.LastName}} <br>
+			{{ShootingGuard.Weight}} {{ShootingGuard.Height}} <br>
+			{{ShootingGuard.Scoring}} {{ShootingGuard.Passing}} {{ShootingGuard.Defense}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col player-box" id="Small Forward">
+			{{SmallForward.FirstName}} {{SmallForward.LastName}} <br>
+			{{SmallForward.Weight}} {{SmallForward.Height}} <br>
+			{{SmallForward.Scoring}} {{SmallForward.Passing}} {{SmallForward.Defense}}
+		</div>
+		<div class="col player-box" id="Power Forward">
+			{{PowerForward.FirstName}} {{PowerForward.LastName}} <br>
+			{{PowerForward.Weight}} {{PowerForward.Height}} <br>
+			{{PowerForward.Scoring}} {{PowerForward.Passing}} {{PowerForward.Defense}}
+		</div>
+		<div class="col player-box" id="Center">
+			{{Center.FirstName}} {{Center.LastName}} <br>
+			{{Center.Weight}} {{Center.Height}} <br>
+			{{Center.Scoring}} {{Center.Passing}} {{Center.Defense}}
+		</div>
+	</div>
+	<hr>
+	<div class="row" style="text-align: center; margin-top: 10px">
+		 <div class="col"> Free Agents </div>
+	</div>
+	<div class="row" id="free agent box">
+		<div class="col player-box" id="Free Agent One">
+			{{FreeAgentOne.FirstName}} {{FreeAgentOne.LastName}} <br>
+			{{FreeAgentOne.Weight}} {{FreeAgentOne.Height}} <br>
+			{{FreeAgentOne.Scoring}} {{FreeAgentOne.Passing}} {{FreeAgentOne.Defense}}
+		</div>
+		<div class="col player-box" id="Free Agent Two">
+			{{FreeAgentTwo.FirstName}} {{FreeAgentTwo.LastName}} <br>
+			{{FreeAgentTwo.Weight}} {{FreeAgentTwo.Height}} <br>
+			{{FreeAgentTwo.Scoring}} {{FreeAgentTwo.Passing}} {{FreeAgentTwo.Defense}}
+		</div>
+		<div class="col player-box" id="Free Agent Three">
+			{{FreeAgentThree.FirstName}} {{FreeAgentThree.LastName}} <br>
+			{{FreeAgentThree.Weight}} {{FreeAgentThree.Height}} <br>
+			{{FreeAgentThree.Scoring}} {{FreeAgentThree.Passing}} {{FreeAgentThree.Defense}}
+		</div>
+	</div>
+	<hr>
+	<div class="row" style="text-align: center; margin-top: 10px">
+		 <div class="col"> 
+			Game Results <br>
+			{{Record}}
+		 </div>
+	</div>
+	<div class="row" style="border-style: solid; border-width: 1px; margin: 1px">
+		<div class="col">
+			<div class="row game-results">
+			{{WeekOneResult}}
+			</div>
+			<div class="row game-results">
+			{{WeekTwoResult}}
+			</div>
+			<div class="row game-results">
+			{{WeekThreeResult}}
+			</div>
+		</div>
+		<div class="col">
+			<div class="row game-results">
+			{{WeekFourResult}}
+			</div>
+			<div class="row game-results">
+			{{WeekFiveResult}}
+			</div>
+			<div class="row game-results">
+			{{WeekSixResult}}
+			</div>
+		</div>
+		<div class="col">
+			<div class="row game-results">
+			{{WeekSevenResult}}
+			</div>
+			<div class="row game-results">
+			{{WeekEightResult}}
+			</div>
+			<div class="row game-results">
+			{{WeekNineResult}}
+			</div>
+		</div>
+	</div>
+	<div class="row" id="Start Simulation" style="display: inline, text-align: center;">
+		<button type="button" id="Start Season Game">Play Next Game</button>
+	</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'game/css/bootstrap.min.css' %}" type = "text/css"/>
+	<script type="text/javascript" src="{% static 'game/js/seasonscript.js' %}"></script>
+	
+
+{% endblock %}
